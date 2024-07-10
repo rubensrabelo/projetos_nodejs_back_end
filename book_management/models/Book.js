@@ -27,7 +27,7 @@ const Book = conn.define("Book", {
         type: DataTypes.STRING
     },
     description: {
-        type: DataTypess.STRING
+        type: DataTypes.STRING
     },
 });
 

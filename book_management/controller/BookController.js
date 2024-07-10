@@ -4,11 +4,11 @@ module.exports = class BookController {
     static async showAllBooks(req, res) {
         const tasks = await Book.findAll({raw: true});
 
-        res.render("task/all", {tasks});
+        res.render("books/allbooks", {tasks});
     }
 
     static createBook(req, res) {
-        res.render("books/create");
+        res.render("books/createbook");
     }
 
     static async addBook(req, res) {
@@ -23,7 +23,7 @@ module.exports = class BookController {
 
         await Book.create(book);
 
-        res.redirect("book");
+        res.redirect("books");
     }
 
     static async removeBook(req, res) {
@@ -31,7 +31,7 @@ module.exports = class BookController {
 
         await Book.destroy({where: {id}})
 
-        res.redirect("book")
+        res.redirect("books")
     }
 
     static async updateBook(req, res) {
@@ -39,7 +39,7 @@ module.exports = class BookController {
 
         const book = await Book.findOne({where: {id}, raw: true});
 
-        res.render("task/edit", {task});
+        res.render("books/editbook", {book});
     }
 
     static async updateBookPost(req, res) {
@@ -56,6 +56,6 @@ module.exports = class BookController {
 
         await Book.update({where: {id}});
 
-        res.render("/book");
+        res.render("books");
     }
 };
