@@ -23,7 +23,7 @@ module.exports = class BookController {
 
         await Book.create(book);
 
-        res.redirect("books");
+        res.redirect("allbooks");
     }
 
     static async removeBook(req, res) {

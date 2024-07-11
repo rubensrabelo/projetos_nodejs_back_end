@@ -1,20 +1,20 @@
 <div class="container-content">
     <h2>Register your book: </h2>
 
-    <form action="" method="post" class="container-content-form">
+    <form action="/books/createbook" method="post" class="container-content-form">
         <label for="date">Date:</label>
-        <input type="text" name="date">
+        <input type="text" name="date" placeholder="insert the date of the publication">
         <label for="title">Title:</label>
-        <input type="text" name="title">
+        <input type="text" name="title" placeholder="Insert a title of the">
         <label for="author">Author:</label>
-        <input type="text" name="author">
+        <input type="text" name="author" placeholder="Insert a author of the book">
         <label for="category">Category:</label>
-        <input type="text" name="category">
+        <input type="text" name="category" placeholder="Insert a category of the book">
         <label for="country">Country:</label>
-        <input type="text" name="country">
+        <input type="text" name="country" placeholder="Insert a country of publication">
         <label for="description">Description:</label>
-        <textarea name="description" id="description"></textarea>
+        <textarea name="description" id="description" placeholder="Insert a description about the book"></textarea>
     
-        <input type="submit" name="btn-send">
+        <input type="submit" name="btn-send" value="Send">
     </form>
 </div>
