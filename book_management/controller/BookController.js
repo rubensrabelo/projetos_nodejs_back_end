@@ -11,7 +11,7 @@ module.exports = class BookController {
         res.render("books/createbook");
     }
 
-    static async addBook(req, res) {
+    static async createBookPost(req, res) {
         const book = {
             title: req.body.title,
             category: req.body.category,
@@ -23,7 +23,7 @@ module.exports = class BookController {
 
         await Book.create(book);
 
-        res.redirect("allbooks");
+        res.render("books/allbooks");
     }
 
     static async removeBook(req, res) {
