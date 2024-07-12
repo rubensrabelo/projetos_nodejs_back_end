@@ -2,9 +2,9 @@ const Book = require("../models/Book");
 
 module.exports = class BookController {
     static async showAllBooks(req, res) {
-        const tasks = await Book.findAll({raw: true});
+        const books = await Book.findAll({raw: true});
 
-        res.render("books/allbooks", {tasks});
+        res.render("books/allbooks", {books});
     }
 
     static createBook(req, res) {

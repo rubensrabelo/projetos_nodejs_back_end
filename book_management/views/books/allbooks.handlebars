@@ -1,3 +1,21 @@
-<div class="container-content">
+<div class="container-main-content">
     <h2>Bem-vindo</h2>
+
+    <div class="container-content-items">
+        {{#each books}}
+        <div class="container-content-items-book">
+            <h3>{{this.title}}</h3>
+            <ul>
+                <li>{{this.author}}</li>
+                <li>{{this.category}}</li>
+                <li>{{this.description}}</li>
+            </ul>
+
+            <form action="/books/editbook/" method="post">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit">Edit</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
 </div>
