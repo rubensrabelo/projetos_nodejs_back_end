@@ -37,7 +37,7 @@ module.exports = class BookController {
     static async updateBook(req, res) {
         const id = req.params.id;
 
-        const book = await Book.findOne({where: {id}, raw: true});
+        const book = await Book.findOne({where: {id: id}, raw: true});
 
         res.render("books/editbook", {book});
     }
