@@ -43,7 +43,7 @@ module.exports = class BookController {
     }
 
     static async updateBookPost(req, res) {
-        const id = req.params.id;
+        const id = req.body.id;
 
         const book = {
             title: req.body.title,
@@ -54,8 +54,8 @@ module.exports = class BookController {
             description: req.body.description,
         };
 
-        await Book.update({where: {id}});
+        await Book.update(book, {where: {id}});
 
-        res.render("books");
+        res.render("books/allbooks");
     }
 };

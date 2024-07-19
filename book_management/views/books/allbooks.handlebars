@@ -11,10 +11,7 @@
                 <li>{{this.description}}</li>
             </ul>
 
-            <form action="/books/editbook/{{this.id}}" method="post">
-                <input type="hidden" name="id" value="{{this.id}}">
-                <button type="submit">Edit</button>
-            </form>
+            <a href="/books/editbook/{{this.id}}">Edit</a>
         </div>
         {{/each}}
     </div>

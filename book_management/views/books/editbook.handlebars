@@ -1,20 +1,20 @@
 <div class="container-content">
     <h2>Edit your book: </h2>
 
-    <form action="" method="post" class="container-content-form">
-        <input type="hidden" name="id" value="{{this.id}}">
+    <form action="/books/editbook" method="post" class="container-content-form">
+        <input type="hidden" name="id" value="{{book.id}}">
         <label for="date">Date:</label>
-        <input type="text" name="date" value="{{this.date}}">
+        <input type="text" name="date" value="{{book.date}}">
         <label for="title">Title:</label>
-        <input type="text" name="title" value="{{this.title}}">
+        <input type="text" name="title" value="{{book.title}}">
         <label for="author">Author:</label>
-        <input type="text" name="author" value="{{this.author}}">
+        <input type="text" name="author" value="{{book.author}}">
         <label for="category">Category:</label>
-        <input type="text" name="category" value="{{this.category}}">
+        <input type="text" name="category" value="{{book.category}}">
         <label for="country">Country:</label>
-        <input type="text" name="country" value="{{this.country}}">
+        <input type="text" name="country" value="{{book.country}}">
         <label for="description">Description:</label>
-        <textarea name="description" id="description">{{this.description}}</textarea>
+        <textarea name="description" id="description">{{book.description}}</textarea>
     
         <input type="submit" name="btn-send">
     </form>
