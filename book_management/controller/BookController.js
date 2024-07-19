@@ -56,6 +56,6 @@ module.exports = class BookController {
 
         await Book.update(book, {where: {id}});
 
-        res.render("books/allbooks");
+        res.redirect("/books");
     }
 };
