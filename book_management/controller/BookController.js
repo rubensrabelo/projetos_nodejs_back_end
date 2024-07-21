@@ -8,7 +8,7 @@ module.exports = class BookController {
     }
 
     static createBook(req, res) {
-        res.render("books/createbook");
+        res.render("books/create");
     }
 
     static async createBookPost(req, res) {
@@ -23,15 +23,15 @@ module.exports = class BookController {
 
         await Book.create(book);
 
-        res.render("books/allbooks");
+        res.redirect("/books");
     }
 
     static async removeBook(req, res) {
         const id = req.body.id;
 
-        await Book.destroy({where: {id}})
+        await Book.destroy({where: {id: id}});
 
-        res.redirect("books")
+        res.redirect("/books");
     }
 
     static async updateBook(req, res) {
@@ -39,7 +39,7 @@ module.exports = class BookController {
 
         const book = await Book.findOne({where: {id: id}, raw: true});
 
-        res.render("books/editbook", {book});
+        res.render("books/edit", {book});
     }
 
     static async updateBookPost(req, res) {
