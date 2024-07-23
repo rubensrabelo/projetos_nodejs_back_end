@@ -1,6 +1,7 @@
 const {DataTypes} = require("sequelize");
 
 const conn = require("../db/conn");
+const User = require("./User");
 
 const Book = conn.define("Book", {
     title: {
@@ -30,5 +31,8 @@ const Book = conn.define("Book", {
         type: DataTypes.STRING
     },
 });
+
+Book.belongsTo(User);
+User.hasMany(Book);
 
 module.exports = Book;
