@@ -32,7 +32,7 @@ app.use(
         saveUninitialized: false,
         store: new FileStore({
             logFn: function() {},
-            path: require("path").joint(require("os").tmpdir, "sessions"),
+            path: require("path").join(require("os").tmpdir(), "sessions"),
         }),
         cookie: {
             secure: false,
