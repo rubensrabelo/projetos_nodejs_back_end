@@ -38,8 +38,8 @@ app.use(
             secure: false,
             maxAge: 360000,
             expires: new Date(Date.now() + 360000),
-            httpOnly: true
-        }
+            httpOnly: true,
+        },
     }),
 );
 
@@ -51,6 +51,8 @@ app.use((req, res, next) => {
     if(req.session.userid) {
         res.locals.session = req.session;
     }
+
+    next();
 });
 
 app.use("/books", booksRouters);
